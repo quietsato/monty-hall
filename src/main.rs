@@ -102,9 +102,7 @@ impl Args {
                     seed = Some(s);
                 }
                 "-n" => {
-                    let n = args
-                        .next()
-                        .unwrap_or_else(|| panic!("no num iteration given"));
+                    let n = args.next().expect("no num iteration given");
                     let n = n
                         .parse::<usize>()
                         .unwrap_or_else(|e| panic!("invalid num iteration: {n} ({e})"));
